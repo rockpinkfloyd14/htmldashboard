@@ -36,8 +36,10 @@
                     <li class="nav-item"><a class="nav-link" href="#outlook"><i class="fas fa-binoculars"></i> Outlook</a></li>
                     <li class="nav-item"><a class="nav-link" href="#actions"><i class="fas fa-tools"></i> Actions</a></li>
                     <li class="nav-item"><a class="nav-link" href="#charts"><i class="fas fa-chart-bar"></i> Charts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#share-price"><i class="fas fa-chart-line"></i> Share Price</a></li>
                     <li class="nav-item"><a class="nav-link" href="#stock-table"><i class="fas fa-table"></i> Stock Table</a></li>
                     <li class="nav-item"><a class="nav-link" href="#q1-q2-comparison"><i class="fas fa-balance-scale"></i> Q1 vs Q2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reuters"><i class="fas fa-newspaper"></i> Reuters</a></li>
                     <li class="nav-item"><a class="nav-link" href="#media"><i class="fas fa-video"></i> Media & Links</a></li>
                 </ul>
             </div>
@@ -171,6 +173,29 @@
             <p>Interactive Tip: Hover over charts for details!</p>
         </section>
 
+        <section id="share-price">
+            <h2><i class="fas fa-chart-line"></i> TradingView Share Price Chart</h2>
+            <div id="tradingview-widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": 500,
+                    "symbol": "NYSE:DOW",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "light",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview-widget"
+                });
+            </script>
+            <p>Live share price chart for Dow Inc. (NYSE:DOW). Use the controls to zoom and analyze trends.</p>
+        </section>
+
         <section id="stock-table">
             <h2><i class="fas fa-table"></i> Stock Performance Table</h2>
             <table>
@@ -194,6 +219,17 @@
                 </tbody>
             </table>
             <button class="insight-btn" data-bs-toggle="modal" data-bs-target="#insightModal" onclick="setInsight('Comparison Insight: Q2 dip due to maintenance; expect Q3 recovery!')">Analyze</button>
+        </section>
+
+        <section id="reuters">
+            <h2><i class="fas fa-newspaper"></i> Reuters Commentary & Recent Headlines</h2>
+            <p>Commentary: Dow Inc. is grappling with a prolonged industry downturn, leading to a halved dividend, bigger-than-expected losses, and sales forecasts below estimates amid tariff uncertainty.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://www.reuters.com/business/dow-slashes-dividend-reports-bigger-than-expected-loss-2025-07-24/" target="_blank">Dow slashes dividend, reports bigger-than-expected loss</a> (Published: 17 hours ago)</li>
+                <li class="list-group-item"><a href="https://www.reuters.com/business/dow-forecasts-sales-below-estimates-slashes-dividend-downturn-tariff-uncertainty-2025-07-24/" target="_blank">Dow forecasts sales below estimates, slashes dividend on downturn ...</a> (Published: 13 hours ago)</li>
+                <li class="list-group-item"><a href="https://www.reuters.com/business/dow-slashes-dividend-reports-bigger-than-expected-loss-2025-07-24/" target="_blank">Dow forecasts sales below estimates, slashes dividend as downturn ...</a> (Published: 16 hours ago)</li>
+                <li class="list-group-item"><a href="https://www.reuters.com/markets/companies/DOW.N/" target="_blank">Dow Inc. Stock Price & Latest News</a></li>
+            </ul>
         </section>
 
         <section id="media">
