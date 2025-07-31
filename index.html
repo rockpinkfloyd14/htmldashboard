@@ -3,265 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 12 Asian Economies - Macro Parameters</title>
+    <title>Albemarle Earnings Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        tr:nth-child(even) { background-color: #ffefd5; } /* light yellowish orange */
-        tr:nth-child(odd) { background-color: #ffffff; } /* white */
-        @media screen and (max-width: 600px) {
-            table { border: 0; }
-            thead { display: none; }
-            tr { border-bottom: 2px solid #ddd; display: block; margin-bottom: 10px; }
-            td { border-bottom: 1px solid #ddd; display: block; text-align: right; }
-            td:before { content: attr(data-label); float: left; font-weight: bold; }
-        }
+        body { padding: 20px; }
+        .tab-content { padding: 20px; }
+        .bullet-list { list-style-type: disc; margin-left: 20px; }
+        .bullet-list li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <h1>Top 12 Asian Economies: Key Macro Parameters (2025 Estimates)</h1>
-    <p>Data compiled from IMF, World Bank, and other sources as of July 2025. All figures approximate.</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Country</th>
-                <th>Nominal GDP (USD bn)</th>
-                <th>PPP GDP (USD bn)</th>
-                <th>GDP Growth (%)</th>
-                <th>GDP per Capita (USD)</th>
-                <th>Population (mn)</th>
-                <th>Inflation (%)</th>
-                <th>Unemployment (%)</th>
-                <th>Debt to GDP (%)</th>
-                <th>Current Account (% GDP)</th>
-                <th>Exports (USD bn)</th>
-                <th>Imports (USD bn)</th>
-                <th>FDI Inflow (USD bn)</th>
-                <th>Currency</th>
-                <th>Central Bank Rate (%)</th>
-                <th>Commentary</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td data-label="Country">China</td>
-                <td data-label="Nominal GDP (USD bn)">19,320</td>
-                <td data-label="PPP GDP (USD bn)">35,000</td>
-                <td data-label="GDP Growth (%)">4.5</td>
-                <td data-label="GDP per Capita (USD)">13,600</td>
-                <td data-label="Population (mn)">1,410</td>
-                <td data-label="Inflation (%)">1.5</td>
-                <td data-label="Unemployment (%)">5.0</td>
-                <td data-label="Debt to GDP (%)">80</td>
-                <td data-label="Current Account (% GDP)">1.5</td>
-                <td data-label="Exports (USD bn)">3,500</td>
-                <td data-label="Imports (USD bn)">2,800</td>
-                <td data-label="FDI Inflow (USD bn)">180</td>
-                <td data-label="Currency">CNY</td>
-                <td data-label="Central Bank Rate (%)">4.0</td>
-                <td data-label="Commentary">Slowing growth due to property sector issues, strong in manufacturing and exports.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">India</td>
-                <td data-label="Nominal GDP (USD bn)">4,190</td>
-                <td data-label="PPP GDP (USD bn)">15,000</td>
-                <td data-label="GDP Growth (%)">6.8</td>
-                <td data-label="GDP per Capita (USD)">2,880</td>
-                <td data-label="Population (mn)">1,455</td>
-                <td data-label="Inflation (%)">4.5</td>
-                <td data-label="Unemployment (%)">6.5</td>
-                <td data-label="Debt to GDP (%)">85</td>
-                <td data-label="Current Account (% GDP)">-1.5</td>
-                <td data-label="Exports (USD bn)">700</td>
-                <td data-label="Imports (USD bn)">900</td>
-                <td data-label="FDI Inflow (USD bn)">70</td>
-                <td data-label="Currency">INR</td>
-                <td data-label="Central Bank Rate (%)">6.5</td>
-                <td data-label="Commentary">Robust growth from domestic demand and infrastructure investments.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Japan</td>
-                <td data-label="Nominal GDP (USD bn)">4,186</td>
-                <td data-label="PPP GDP (USD bn)">6,000</td>
-                <td data-label="GDP Growth (%)">1.0</td>
-                <td data-label="GDP per Capita (USD)">34,000</td>
-                <td data-label="Population (mn)">123</td>
-                <td data-label="Inflation (%)">2.0</td>
-                <td data-label="Unemployment (%)">2.5</td>
-                <td data-label="Debt to GDP (%)">250</td>
-                <td data-label="Current Account (% GDP)">3.5</td>
-                <td data-label="Exports (USD bn)">900</td>
-                <td data-label="Imports (USD bn)">900</td>
-                <td data-label="FDI Inflow (USD bn)">50</td>
-                <td data-label="Currency">JPY</td>
-                <td data-label="Central Bank Rate (%)">0.1</td>
-                <td data-label="Commentary">High public debt and aging population constraining growth.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Russia</td>
-                <td data-label="Nominal GDP (USD bn)">2,076</td>
-                <td data-label="PPP GDP (USD bn)">5,000</td>
-                <td data-label="GDP Growth (%)">1.5</td>
-                <td data-label="GDP per Capita (USD)">14,400</td>
-                <td data-label="Population (mn)">144</td>
-                <td data-label="Inflation (%)">5.0</td>
-                <td data-label="Unemployment (%)">4.0</td>
-                <td data-label="Debt to GDP (%)">20</td>
-                <td data-label="Current Account (% GDP)">4.0</td>
-                <td data-label="Exports (USD bn)">500</td>
-                <td data-label="Imports (USD bn)">300</td>
-                <td data-label="FDI Inflow (USD bn)">20</td>
-                <td data-label="Currency">RUB</td>
-                <td data-label="Central Bank Rate (%)">7.5</td>
-                <td data-label="Commentary">Sanctions impacting economy, reliant on energy exports.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">South Korea</td>
-                <td data-label="Nominal GDP (USD bn)">1,790</td>
-                <td data-label="PPP GDP (USD bn)">3,000</td>
-                <td data-label="GDP Growth (%)">2.2</td>
-                <td data-label="GDP per Capita (USD)">35,000</td>
-                <td data-label="Population (mn)">51</td>
-                <td data-label="Inflation (%)">2.0</td>
-                <td data-label="Unemployment (%)">3.5</td>
-                <td data-label="Debt to GDP (%)">50</td>
-                <td data-label="Current Account (% GDP)">4.0</td>
-                <td data-label="Exports (USD bn)">700</td>
-                <td data-label="Imports (USD bn)">650</td>
-                <td data-label="FDI Inflow (USD bn)">25</td>
-                <td data-label="Currency">KRW</td>
-                <td data-label="Central Bank Rate (%)">3.5</td>
-                <td data-label="Commentary">Tech and export-driven, vulnerable to global demand.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Turkey</td>
-                <td data-label="Nominal GDP (USD bn)">1,437</td>
-                <td data-label="PPP GDP (USD bn)">3,600</td>
-                <td data-label="GDP Growth (%)">3.0</td>
-                <td data-label="GDP per Capita (USD)">16,000</td>
-                <td data-label="Population (mn)">85</td>
-                <td data-label="Inflation (%)">40.0</td>
-                <td data-label="Unemployment (%)">10.0</td>
-                <td data-label="Debt to GDP (%)">40</td>
-                <td data-label="Current Account (% GDP)">-3.0</td>
-                <td data-label="Exports (USD bn)">250</td>
-                <td data-label="Imports (USD bn)">300</td>
-                <td data-label="FDI Inflow (USD bn)">10</td>
-                <td data-label="Currency">TRY</td>
-                <td data-label="Central Bank Rate (%)">50.0</td>
-                <td data-label="Commentary">Battling high inflation and currency volatility.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Indonesia</td>
-                <td data-label="Nominal GDP (USD bn)">1,429</td>
-                <td data-label="PPP GDP (USD bn)">4,700</td>
-                <td data-label="GDP Growth (%)">5.0</td>
-                <td data-label="GDP per Capita (USD)">5,200</td>
-                <td data-label="Population (mn)">275</td>
-                <td data-label="Inflation (%)">2.5</td>
-                <td data-label="Unemployment (%)">5.0</td>
-                <td data-label="Debt to GDP (%)">40</td>
-                <td data-label="Current Account (% GDP)">-0.5</td>
-                <td data-label="Exports (USD bn)">300</td>
-                <td data-label="Imports (USD bn)">250</td>
-                <td data-label="FDI Inflow (USD bn)">25</td>
-                <td data-label="Currency">IDR</td>
-                <td data-label="Central Bank Rate (%)">6.0</td>
-                <td data-label="Commentary">Commodity-driven growth with emerging consumer market.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Saudi Arabia</td>
-                <td data-label="Nominal GDP (USD bn)">1,083</td>
-                <td data-label="PPP GDP (USD bn)">2,300</td>
-                <td data-label="GDP Growth (%)">3.0</td>
-                <td data-label="GDP per Capita (USD)">30,000</td>
-                <td data-label="Population (mn)">36</td>
-                <td data-label="Inflation (%)">2.0</td>
-                <td data-label="Unemployment (%)">5.0</td>
-                <td data-label="Debt to GDP (%)">30</td>
-                <td data-label="Current Account (% GDP)">5.0</td>
-                <td data-label="Exports (USD bn)">300</td>
-                <td data-label="Imports (USD bn)">200</td>
-                <td data-label="FDI Inflow (USD bn)">20</td>
-                <td data-label="Currency">SAR</td>
-                <td data-label="Central Bank Rate (%)">6.0</td>
-                <td data-label="Commentary">Diversifying from oil under Vision 2030.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Taiwan</td>
-                <td data-label="Nominal GDP (USD bn)">804</td>
-                <td data-label="PPP GDP (USD bn)">1,700</td>
-                <td data-label="GDP Growth (%)">3.0</td>
-                <td data-label="GDP per Capita (USD)">34,000</td>
-                <td data-label="Population (mn)">23</td>
-                <td data-label="Inflation (%)">1.5</td>
-                <td data-label="Unemployment (%)">3.5</td>
-                <td data-label="Debt to GDP (%)">30</td>
-                <td data-label="Current Account (% GDP)">12.0</td>
-                <td data-label="Exports (USD bn)">450</td>
-                <td data-label="Imports (USD bn)">400</td>
-                <td data-label="FDI Inflow (USD bn)">10</td>
-                <td data-label="Currency">TWD</td>
-                <td data-label="Central Bank Rate (%)">2.0</td>
-                <td data-label="Commentary">Global leader in semiconductors, geopolitical tensions with China.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Israel</td>
-                <td data-label="Nominal GDP (USD bn)">584</td>
-                <td data-label="PPP GDP (USD bn)">550</td>
-                <td data-label="GDP Growth (%)">1.5</td>
-                <td data-label="GDP per Capita (USD)">60,000</td>
-                <td data-label="Population (mn)">9.8</td>
-                <td data-label="Inflation (%)">3.0</td>
-                <td data-label="Unemployment (%)">4.0</td>
-                <td data-label="Debt to GDP (%)">60</td>
-                <td data-label="Current Account (% GDP)">5.0</td>
-                <td data-label="Exports (USD bn)">150</td>
-                <td data-label="Imports (USD bn)">130</td>
-                <td data-label="FDI Inflow (USD bn)">25</td>
-                <td data-label="Currency">ILS</td>
-                <td data-label="Central Bank Rate (%)">4.5</td>
-                <td data-label="Commentary">Innovation-driven economy, impacted by regional conflicts.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">Singapore</td>
-                <td data-label="Nominal GDP (USD bn)">565</td>
-                <td data-label="PPP GDP (USD bn)">800</td>
-                <td data-label="GDP Growth (%)">2.5</td>
-                <td data-label="GDP per Capita (USD)">100,000</td>
-                <td data-label="Population (mn)">5.6</td>
-                <td data-label="Inflation (%)">2.0</td>
-                <td data-label="Unemployment (%)">2.0</td>
-                <td data-label="Debt to GDP (%)">160</td>
-                <td data-label="Current Account (% GDP)">18.0</td>
-                <td data-label="Exports (USD bn)">500</td>
-                <td data-label="Imports (USD bn)">450</td>
-                <td data-label="FDI Inflow (USD bn)">100</td>
-                <td data-label="Currency">SGD</td>
-                <td data-label="Central Bank Rate (%)">3.0</td>
-                <td data-label="Commentary">Financial and trade hub with high per capita income.</td>
-            </tr>
-            <tr>
-                <td data-label="Country">UAE</td>
-                <td data-label="Nominal GDP (USD bn)">549</td>
-                <td data-label="PPP GDP (USD bn)">950</td>
-                <td data-label="GDP Growth (%)">4.0</td>
-                <td data-label="GDP per Capita (USD)">50,000</td>
-                <td data-label="Population (mn)">10</td>
-                <td data-label="Inflation (%)">2.0</td>
-                <td data-label="Unemployment (%)">3.0</td>
-                <td data-label="Debt to GDP (%)">30</td>
-                <td data-label="Current Account (% GDP)">8.0</td>
-                <td data-label="Exports (USD bn)">400</td>
-                <td data-label="Imports (USD bn)">300</td>
-                <td data-label="FDI Inflow (USD bn)">30</td>
-                <td data-label="Currency">AED</td>
-                <td data-label="Central Bank Rate (%)">5.0</td>
-                <td data-label="Commentary">Economy diversifying into tourism, finance, and tech.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1 class="text-center mb-4">Albemarle Earnings Summary</h1>
+        <ul class="nav nav-tabs" id="earningsTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main" type="button" role="tab">Main Summary</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="q225-tab" data-bs-toggle="tab" data-bs-target="#q225" type="button" role="tab">Q2 2025</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="q125-tab" data-bs-toggle="tab" data-bs-target="#q125" type="button" role="tab">Q1 2025</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="q424-tab" data-bs-toggle="tab" data-bs-target="#q424" type="button" role="tab">Q4 2024</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="q324-tab" data-bs-toggle="tab" data-bs-target="#q324" type="button" role="tab">Q3 2024</button>
+            </li>
+        </ul>
+        <div class="tab-content border border-top-0">
+            <div class="tab-pane fade show active" id="main" role="tabpanel">
+                <h2>Main Summary</h2>
+                <h3>Changes in Key Metrics</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Quarter</th>
+                            <th>Revenue ($B)</th>
+                            <th>QoQ Change (%)</th>
+                            <th>YoY Change (%)</th>
+                            <th>EBITDA ($M)</th>
+                            <th>EBITDA %</th>
+                            <th>Production Volume (kT LCE)</th>
+                            <th>YoY Change (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Q3 2024</td>
+                            <td>1.355</td>
+                            <td>-</td>
+                            <td>-41</td>
+                            <td>211</td>
+                            <td>16</td>
+                            <td>59</td>
+                            <td>+16 (Energy Storage)</td>
+                        </tr>
+                        <tr>
+                            <td>Q4 2024</td>
+                            <td>1.232</td>
+                            <td>-9</td>
+                            <td>-48</td>
+                            <td>251</td>
+                            <td>20</td>
+                            <td>49</td>
+                            <td>-10 (Energy Storage)</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 2025</td>
+                            <td>1.077</td>
+                            <td>-12.6</td>
+                            <td>-21</td>
+                            <td>267</td>
+                            <td>25</td>
+                            <td>44</td>
+                            <td>0 (flat)</td>
+                        </tr>
+                        <tr>
+                            <td>Q2 2025</td>
+                            <td>1.330</td>
+                            <td>+23.5</td>
+                            <td>-7</td>
+                            <td>336</td>
+                            <td>25</td>
+                            <td>58</td>
+                            <td>+15 (Energy Storage)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Lithium Spodumene and Spot Prices (LHS, Log Scale) and Albemarle Share Price (RHS) (2 Years)</h3>
+                <canvas id="pricesChart" width="400" height="200"></canvas>
+            </div>
+            <div class="tab-pane fade" id="q225" role="tabpanel">
+                <h2>Q2 2025 Summary</h2>
+                <ul class="bullet-list">
+                    <li>Achieved net sales of $1.3 billion and adjusted EBITDA of $336 million in Q2 2025, with sequential improvements driven by better fixed cost absorption and cost savings.</li>
+                    <li>Energy Storage segment saw 15% volume growth year-over-year, with Q2 2025 sales volumes at 58 kT LCE, supported by record production from the integrated conversion network.</li>
+                    <li>Reduced full-year 2025 capital expenditure outlook to $650-700 million, down approximately 60% year-over-year, enhancing financial flexibility.</li>
+                    <li>Expect to achieve positive free cash flow in FY 2025, assuming current lithium market pricing persists, with operating cash flow conversion targeted at >80%.</li>
+                    <li>Global lithium demand remains strong, led by 35% year-over-year growth in EV sales through May 2025, particularly in China, Europe, and North America.</li>
+                </ul>
+                <h3>Additional Information</h3>
+                <p>Revenue: $1.33B | Adjusted EBITDA: $336M | EBITDA Margin: 25% | Energy Storage Volume Growth: +15% YoY | Lithium Production: Record levels implied in volume growth. Cash Flow: FY 2025E operating cash flow conversion expected to be >80%, driven by a $350 million customer prepayment in Energy Storage and ongoing working capital improvements. Positive H1 2025 free cash flow, with expectations for positive FY 2025 free cash flow.</p>
+            </div>
+            <div class="tab-pane fade" id="q125" role="tabpanel">
+                <h2>Q1 2025 Summary</h2>
+                <ul class="bullet-list">
+                    <li>Achieved net sales of $1.1 billion and adjusted EBITDA of $267 million in Q1 2025, with year-over-year gains in Specialties (+30%) and Ketjen (+76%).</li>
+                    <li>Cash from operations was $545 million, with operating cash flow conversion at 204% (73% excluding customer prepayment), and net debt to adjusted EBITDA at 2.4x, well below the covenant limit.</li>
+                    <li>Energy Storage segment reported Q1 2025 sales volumes of 44 kT LCE, with volume growth expected between 0% and 10% year-over-year, and ~50% of 2025 E salts volumes sold on long-term agreements.</li>
+                    <li>Through April, achieved ~90% run-rate against the midpoint $350 million cost and productivity improvement target, identifying opportunities to reach the high end of $300M to $400M range.</li>
+                    <li>Maintaining FY 2025 outlook considerations, with line of sight to breakeven free cash flow, and introducing an updated lithium supply-demand outlook expecting 2025 to be more balanced.</li>
+                </ul>
+                <h3>Additional Information</h3>
+                <p>Revenue: $1.077B | Adjusted EBITDA: $267M | EBITDA Margin: 25% | Production Volume: 44 kT LCE | Specialties EBITDA Growth: +30% YoY. Cash Flow: Q1 2025 cash from operations was $545 million, with FY 2025E operating cash conversion expected to be >80%, including a $350 million customer prepayment in Energy Storage.</p>
+            </div>
+            <div class="tab-pane fade" id="q424" role="tabpanel">
+                <h2>Q4 2024 Summary</h2>
+                <ul class="bullet-list">
+                    <li>Achieved Q4 2024 net sales of $1,232 million and adjusted EBITDA of $251 million, with year-over-year improvements in all business segments, driven by higher volumes and productivity gains.</li>
+                    <li>FY 2024 adjusted EBITDA of $1,140 million was in line with outlook, supported by cost improvements, higher volumes, and contract performance, despite a 44% decline in net sales year-over-year.</li>
+                    <li>Energy Storage segment saw a 26% year-over-year increase in LCE sales volumes, reaching 203 kt for FY 2024, with expectations of 0% to 10% volume growth in FY 2025.</li>
+                    <li>Introduced FY 2025 outlook with net sales projected at $4.9B-$7.0B and adjusted EBITDA at $0.8B-$2.7B, aiming for breakeven free cash flow, supported by reduced capital expenditures of $700M-$800M (down >50% YoY).</li>
+                    <li>Executed cost and productivity actions, achieving over 50% run-rate of $300M-$400M target by year-end 2024, with plans to reach 100% run-rate by YE 2025, enhancing cash conversion expected to exceed 80% in FY 2025.</li>
+                </ul>
+                <h3>Additional Information</h3>
+                <p>Revenue: $1.232B | Adjusted EBITDA: $251M | EBITDA Margin: 20% | Energy Storage Volume Change: -10% YoY (Q4) | Annual Production Growth: +26%. Cash Flow: Cash from operations in FY 2024 was $702 million, with operating cash conversion at >60%. FY 2025E operating cash conversion is expected to be >80%, driven by a $350M customer prepayment in Energy Storage and ongoing working capital improvements.</p>
+            </div>
+            <div class="tab-pane fade" id="q324" role="tabpanel">
+                <h2>Q3 2024 Summary</h2>
+                <ul class="bullet-list">
+                    <li>Q3 2024 net sales were $1,355 million, down 41% year-over-year, with volume growth in Energy Storage (+16%) and Specialties (+4%).</li>
+                    <li>Adjusted EBITDA was $211 million, a 68% decrease year-over-year, with improvements in Specialties (+22%) and Ketjen (+134%).</li>
+                    <li>Operating cash flow was $241 million, achieving cash conversion of >100%, with FY 2024E cash conversion expected at ~50%.</li>
+                    <li>The company is implementing cost and productivity improvements targeting $300-$400 million annually, reducing the global workforce by 6-7% (or ~15% of non-manufacturing workforce).</li>
+                    <li>FY 2024 outlook considerations maintained, with net sales expected at the lower end and adjusted EBITDA towards the middle of the $12-$15/kg lithium market price scenario range.</li>
+                </ul>
+                <h3>Additional Information</h3>
+                <p>Revenue: $1.355B | Adjusted EBITDA: $211M | EBITDA Margin: 16% | Energy Storage Volume Growth: +16% YoY | Lithium Production: Ramp in key facilities. Cash Flow: Q3 operating cash flow conversion was >100%, driven by working capital management; FY 2024E cash conversion expected at ~50%, with Q4 expected to be negative due to timing of JV dividends and cash outflows from workforce reductions.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var ctx = document.getElementById('pricesChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Aug 2023', 'Sep 2023', 'Oct 2023', 'Nov 2023', 'Dec 2023', 'Jan 2024', 'Feb 2024', 'Mar 2024', 'Apr 2024', 'May 2024', 'Jun 2024', 'Jul 2024', 'Aug 2024', 'Sep 2024', 'Oct 2024', 'Nov 2024', 'Dec 2024', 'Jan 2025', 'Feb 2025', 'Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025', 'Jul 2025'],
+                datasets: [{
+                    label: 'Lithium Carbonate Spot Price (USD/T)',
+                    data: [35000, 32000, 30000, 25000, 20000, 18000, 15000, 14000, 13000, 12000, 11000, 10000, 9500, 9000, 8500, 8000, 7500, 10484, 10000, 9500, 9000, 8500, 8329, 8700],
+                    borderColor: 'blue',
+                    fill: false,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Spodumene Price (USD/T)',
+                    data: [3500, 3200, 3000, 2500, 2000, 1800, 1500, 1400, 1300, 1200, 1100, 1000, 950, 900, 850, 800, 750, 800, 780, 760, 750, 740, 730, 764],
+                    borderColor: 'green',
+                    fill: false,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Albemarle Share Price (USD)',
+                    data: [191, 170, 145, 129, 144, 120, 124, 132, 119, 123, 96, 93, 90, 95, 95, 108, 86, 84, 77, 72, 59, 56, 63, 69],
+                    borderColor: 'red',
+                    fill: false,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        type: 'logarithmic',
+                        position: 'left',
+                        beginAtZero: false
+                    },
+                    y1: {
+                        type: 'linear',
+                        position: 'right',
+                        grid: {
+                            drawOnChartArea: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
